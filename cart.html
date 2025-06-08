@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giỏ Hàng | ANITA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Arial', sans-serif; margin: 0; background: #fff; color: #333; }
+    header, footer { background: #fff; border-bottom: 1px solid #ccc; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+    nav a { margin: 0 15px; text-decoration: none; color: #000; font-weight: 500; }
+    .icons i { margin-left: 20px; cursor: pointer; color: #000; }
+
+    h1 { text-align: center; font-size: 24px; margin-top: 30px; text-transform: uppercase; }
+    p.sub { text-align: center; color: #666; }
+
+    table { width: 80%; margin: 30px auto; border-collapse: collapse; }
+    th, td { padding: 15px; text-align: center; border-bottom: 1px solid #ccc; }
+    th { background: #3d3b3b; color: white; }
+    td img { width: 70px; }
+
+    .quantity-btns button {
+      background: none; border: 1px solid #ccc; padding: 5px 10px; cursor: pointer;
+    }
+
+    .checkout-btn {
+      display: block; width: 250px; margin: 30px auto; background: #3d3b3b; color: white;
+      border: none; padding: 15px; font-size: 16px; border-radius: 5px; cursor: pointer;
+    }
+
+    footer { margin-top: 60px; flex-wrap: wrap; text-align: center; font-size: 14px; color: #666; }
+    footer .footer-columns { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 20px; }
+    footer ul { list-style: none; padding: 0; }
+    footer ul li { margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ANITA</div>
+    <nav>
+      <a href="#">Trang Chủ</a>
+      <a href="#">Sản Phẩm</a>
+      <a href="#">Giới Thiệu</a>
+      <a href="#">Liên Hệ</a>
+    </nav>
+    <div class="icons">
+      <i class="fas fa-shopping-cart"></i>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </header>
+
+  <main>
+    <h1>Giỏ Hàng Của Bạn</h1>
+    <p class="sub">Xem lại các sản phẩm bạn đã chọn trước khi tiến hành thanh toán.</p>
+
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>ẢNH</th>
+          <th>SẢN PHẨM</th>
+          <th>GIÁ</th>
+          <th>SỐ LƯỢNG</th>
+          <th>TỔNG TIỀN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-price="2000000">
+          <td><img src="https://i.imgur.com/ZXBtVw7.jpg" alt="sp1"></td>
+          <td>CHAIN BRACELET</td>
+          <td>2.000.000</td>
+          <td class="quantity-btns">
+            <button onclick="changeQty(this, -1)">-</button>
+            <span class="qty">2</span>
+            <button onclick="changeQty(this, 1)">+</button>
+          </td>
+          <td class="total" style="color: #D1816F">4.000.000</td>
+        </tr>
+        <tr data-price="1000000">
+          <td><img src="https://i.imgur.com/ZXBtVw7.jpg" alt="sp2"></td>
+          <td>CHAIN BRACELET</td>
+          <td>1.000.000</td>
+          <td class="quantity-btns">
+            <button onclick="changeQty(this, -1)">-</button>
+            <span class="qty">1</span>
+            <button onclick="changeQty(this, 1)">+</button>
+          </td>
+          <td class="total" style="color: #D1816F">1.000.000</td>
+        </tr>
+        <tr data-price="7000000">
+          <td><img src="https://i.imgur.com/ZXBtVw7.jpg" alt="sp3"></td>
+          <td>CHAIN BRACELET</td>
+          <td>7.000.000</td>
+          <td class="quantity-btns">
+            <button onclick="changeQty(this, -1)">-</button>
+            <span class="qty">1</span>
+            <button onclick="changeQty(this, 1)">+</button>
+          </td>
+          <td class="total" style="color: #D1816F">7.000.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="checkout-btn" onclick="window.location.href='order.html'">TIẾN HÀNH ĐẶT HÀNG</button>
+  </main>
+
+  <footer>
+    <div class="logo">ANITA</div>
+    <div class="footer-columns">
+      <div>
+        <ul>
+          <li>Trang Chủ</li>
+          <li>Sản phẩm</li>
+          <li>Giới thiệu</li>
+          <li>Liên hệ</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Chính sách bảo mật</li>
+          <li>Điều khoản sử dụng</li>
+          <li>Hỗ trợ khách hàng</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Câu hỏi thường gặp</li>
+          <li>Chính sách đổi trả</li>
+          <li>Phương thức thanh toán</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top: 20px">&copy; 2077 ANITA. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function formatNumber(num) {
+      return num.toLocaleString('vi-VN');
+    }
+
+    function changeQty(button, delta) {
+      const row = button.closest('tr');
+      const qtySpan = row.querySelector('.qty');
+      let qty = parseInt(qtySpan.textContent);
+      qty = Math.max(1, qty + delta);
+      qtySpan.textContent = qty;
+
+      const unitPrice = parseInt(row.dataset.price);
+      const totalCell = row.querySelector('.total');
+      totalCell.textContent = formatNumber(qty * unitPrice);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ Hàng – ANITA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Thêm Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background:#F7F7F7;
+      color:#333;
+    }
+
+    .header {
+      background:#fff;
+      display:flex; justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      font-family: 'Playfair Display', serif;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .logo {
+      font-size:32px;
+      font-weight:700;
+    }
+
+    .nav a {
+      margin:0 15px;
+      text-decoration:none;
+      font-size:16px;
+      color:#333;
+      font-weight:500;
+    }
+
+    .user-cart .icon {
+      font-size:22px;
+      margin-left:20px;
+      cursor:pointer;
+      color: #000;
+    }
+
+    .main {
+      padding:40px;
+      text-align:center;
+    }
+
+    .main h1 {
+      font-family: 'Playfair Display', serif;
+      font-size:36px;
+      margin-bottom:10px;
+    }
+
+    .subtitle {
+      font-size:14px;
+      color:#666;
+    }
+
+    .cart-table {
+      width:100%;
+      margin:30px 0;
+      border-collapse:collapse;
+      background:#fff;
+    }
+
+    .cart-table th, .cart-table td {
+      border:1px solid #E0E0E0;
+      padding:15px;
+      font-size:14px;
+      text-align:center;
+    }
+
+    .cart-table th {
+      background:#F0F0F0;
+      font-weight:500;
+    }
+
+    .img-wrap {
+      position:relative;
+      display:inline-block;
+    }
+
+    .img-wrap img {
+      width:60px;
+      height:auto;
+    }
+
+    .btn-remove {
+      position:absolute;
+      top:-8px; right:-8px;
+      border:none;
+      background:#fff;
+      color:#D32F2F;
+      font-size:14px;
+      cursor:pointer;
+      border-radius:50%;
+      width:24px; height:24px;
+      line-height:24px;
+      transition: background-color .2s;
+    }
+
+    .btn-remove:hover {
+      background:#FDECEA;
+    }
+
+    .qty-btn {
+      border:1px solid #ccc;
+      background:#fff;
+      width:28px; height:28px;
+      font-size:18px;
+      cursor:pointer;
+    }
+
+    .checkout {
+      background:#333;
+      color:#fff;
+      padding:12px 30px;
+      font-size:16px;
+      border:none;
+      cursor:pointer;
+      transition:background .2s;
+    }
+
+    .checkout:hover {
+      background:#555;
+    }
+
+    .overlay {
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.5);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index: 1000;
+    }
+
+    .hidden { display:none; }
+
+    .popup {
+      background:#fff;
+      padding:30px;
+      text-align:center;
+      border-radius:6px;
+      width:320px;
+      font-size:14px;
+    }
+
+    .popup h3 {
+      font-size:18px;
+      margin-bottom:10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .popup p {
+      margin-bottom:20px;
+      color:#555;
+    }
+
+    .actions button {
+      padding:10px 20px;
+      margin:0 10px;
+      border:none;
+      cursor:pointer;
+      font-size:14px;
+    }
+
+    .actions .cancel {
+      background:#ccc;
+      color:#333;
+    }
+
+    .actions .confirm {
+      background:#1976D2;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">ANITA</div>
+    <nav class="nav">
+      <a href="#">Trang Chủ</a>
+      <a href="#">Sản Phẩm</a>
+      <a href="#">Giới Thiệu</a>
+      <a href="#">Liên Hệ</a>
+    </nav>
+    <div class="user-cart">
+      <!-- Đã thay icon -->
+      <i class="fas fa-cart-shopping icon"></i>
+      <i class="fas fa-user icon"></i>
+    </div>
+  </header>
+
+  <main class="main">
+    <h1>GIỎ HÀNG CỦA BẠN</h1>
+    <p class="subtitle">Xem lại các sản phẩm bạn đã chọn trước khi tiến hành thanh toán.</p>
+
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>ẢNH</th><th>SẢN PHẨM</th><th>GIÁ</th><th>SỐ LƯỢNG</th><th>TỔNG TIỀN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="img-wrap">
+              <img src="https://via.placeholder.com/60" alt="Bracelet">
+              <button class="btn-remove">✖</button>
+            </div>
+          </td>
+          <td>CHAIN BRACELET</td>
+          <td class="price">1.000.000</td>
+          <td>
+            <button class="qty-btn minus">−</button>
+            <span class="qty">2</span>
+            <button class="qty-btn plus">+</button>
+          </td>
+          <td class="subtotal">2.000.000</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="img-wrap">
+              <img src="https://via.placeholder.com/60" alt="Bracelet">
+              <button class="btn-remove">✖</button>
+            </div>
+          </td>
+          <td>PEARL BRACELET</td>
+          <td class="price">2.000.000</td>
+          <td>
+            <button class="qty-btn minus">−</button>
+            <span class="qty">1</span>
+            <button class="qty-btn plus">+</button>
+          </td>
+          <td class="subtotal">2.000.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="checkout">TIẾN HÀNH ĐẶT HÀNG</button>
+  </main>
+
+  <div class="overlay hidden">
+    <div class="popup">
+      <h3>Xóa Sản Phẩm Khỏi Giỏ Hàng</h3>
+      <p>Bạn chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?</p>
+      <div class="actions">
+        <button class="cancel">Hủy</button>
+        <button class="confirm">Đồng ý</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay = document.querySelector('.overlay');
+      let rowToRemove = null;
+
+      document.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          rowToRemove = e.target.closest('tr');
+          overlay.classList.remove('hidden');
+        });
+      });
+
+      document.querySelector('.cancel').addEventListener('click', () => {
+        overlay.classList.add('hidden');
+        rowToRemove = null;
+      });
+
+      document.querySelector('.confirm').addEventListener('click', () => {
+        if (rowToRemove) {
+          rowToRemove.remove();
+          rowToRemove = null;
+        }
+        overlay.classList.add('hidden');
+      });
+
+      function formatCurrency(num) {
+        return num.toLocaleString('vi-VN');
+      }
+
+      function parseCurrency(text) {
+        return parseInt(text.replace(/\./g, ''));
+      }
+
+      document.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const td = e.target.closest('td');
+          const span = td.querySelector('.qty');
+          let qty = parseInt(span.textContent);
+          if (e.target.classList.contains('plus')) {
+            qty++;
+          } else if (qty > 1) {
+            qty--;
+          }
+          span.textContent = qty;
+
+          const row = e.target.closest('tr');
+          const price = parseCurrency(row.querySelector('.price').textContent);
+          row.querySelector('.subtotal').textContent = formatCurrency(price * qty);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
