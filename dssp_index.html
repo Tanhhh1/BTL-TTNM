@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>DANH SÁCH SẢN PHẨM | ANITA</title>
+    <link rel="stylesheet" href="dssp_styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <span class="logo">ANITA</span>
+        </div>
+        <nav class="header-nav">
+            <a href="#">Trang Chủ</a>
+            <a href="#">Sản Phẩm</a>
+            <a href="#">Giới Thiệu</a>
+            <a href="#">Liên Hệ</a>
+        </nav>
+        <div class="header-icons">
+            <span class="icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+            </span>
+            <span class="icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M5.5 21a8.38 8.38 0 0 1 13 0"/>
+                </svg>
+            </span>
+        </div>
+    </header>
+    <div class="separator"></div>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="title">DANH SÁCH SẢN PHẨM</h1>
+        <p class="subtitle">
+            Khám phá bộ sưu tập trang sức sang trọng từ ANITA. Chúng tôi cung cấp đa dạng mẫu<br>
+            mã từ vòng tay, vòng cổ đến nhẫn cao cấp, được chế tác tinh xảo
+        </p>
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <label class="sidebar-count">Hiển thị 120 sản phẩm</label>
+                </div>
+                <div class="sidebar-section">
+                    <label>Loại sản phẩm</label>
+                    <div><input type="checkbox" id="nhan"><label for="nhan">Nhẫn</label></div>
+                    <div><input type="checkbox" id="vongtay"><label for="vongtay">Vòng tay</label></div>
+                    <div><input type="checkbox" id="daychuyen"><label for="daychuyen">Dây Chuyền</label></div>
+                    <div><input type="checkbox" id="bongtai"><label for="bongtai">Bông tai</label></div>
+                </div>
+                <div class="sidebar-section">
+                    <label>Phạm vi giá tiền</label>
+                    <div><input type="checkbox" id="gia1"><label for="gia1">Nhỏ hơn 5.000.000đ</label></div>
+                    <div><input type="checkbox" id="gia2"><label for="gia2">Từ 5.000.000đ đến 7.000.000đ</label></div>
+                    <div><input type="checkbox" id="gia3"><label for="gia3">Từ 7.000.000đ đến 10.000.000đ</label></div>
+                    <div><input type="checkbox" id="gia4"><label for="gia4">Từ 10.000.000đ đến 15.000.000đ</label></div>
+                    <div><input type="checkbox" id="gia5"><label for="gia5">Lớn hơn 15.000.000đ</label></div>
+                </div>
+                <div class="sidebar-section">
+                    <label>Vật liệu</label>
+                    <div><input type="checkbox" id="kimcuong"><label for="kimcuong">Kim cương</label></div>
+                    <div><input type="checkbox" id="vang"><label for="vang">Vàng</label></div>
+                    <div><input type="checkbox" id="bac"><label for="bac">Bạc</label></div>
+                    <div><input type="checkbox" id="daquy"><label for="daquy">Đá quý</label></div>
+                </div>
+            </aside>
+            <!-- Product List -->
+            <section class="products-section">
+                <div class="products-toolbar">
+                    <div class="products-search">
+                        <div class="search-wrapper">
+                            <span class="search-icon">
+                                <svg width="20" height="20" fill="none" stroke="#888" stroke-width="2" viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                </svg>
+                            </span>
+                            <input type="text" class="search" placeholder="Tìm kiếm sản phẩm theo tên">
+                        </div>
+                    </div>
+                    <div class="products-header">
+                        <div class="sort-dropdown">
+                            <button class="sort-btn" type="button">
+                                Sắp xếp theo: <span class="sort-selected">Tên A → Z</span>
+                                <svg class="sort-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <div class="sort-menu">
+                                <div class="sort-item active">Tên A → Z</div>
+                                <div class="sort-item">Giá từ thấp → cao</div>
+                                <div class="sort-item">Giá từ cao → thấp</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <!-- Product Card (repeat as needed) -->
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">SMALL ECRU CERAMIC COMPOTE</div>
+                        <div class="product-price">$49.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur adipiscing elit.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">PORCELAIN DINNER PLATE</div>
+                        <div class="product-price">$49.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">WARRICK WHITE VASE 20</div>
+                        <div class="product-price">$68.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur adipiscing elit tortor eu.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">SMALL ECRU CERAMIC COMPOTE</div>
+                        <div class="product-price">$49.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur adipiscing elit.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">PORCELAIN DINNER PLATE</div>
+                        <div class="product-price">$49.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">WARRICK WHITE VASE 20</div>
+                        <div class="product-price">$68.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur adipiscing elit tortor eu.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">SMALL ECRU CERAMIC COMPOTE</div>
+                        <div class="product-price">$49.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur adipiscing elit.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">PORCELAIN DINNER PLATE</div>
+                        <div class="product-price">$49.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="icon_and_thumbnail/ring.png" alt="product" class="product-img">
+                        <div class="product-title">WARRICK WHITE VASE 20</div>
+                        <div class="product-price">$68.00</div>
+                        <div class="product-desc">Lorem ipsum dolor sit amet conse boi tetur adipiscing elit tortor eu.</div>
+                        <button class="add-cart">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button>&lt;</button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>&gt;</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <span class="logo">ANITA</span>
+                <p>Kế hoạch phát triển này sẽ giúp bạn đạt được các quyết tâm và mục tiêu mà bạn đang phấn đấu hướng tới.</p>
+                <div class="footer-social">
+                    <a href="#"><img src="icon_and_thumbnail/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="icon_and_thumbnail/insta.png" alt="Instagram"></a>
+                    <a href="#"><img src="icon_and_thumbnail/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="icon_and_thumbnail/gh.png" alt="Github"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <b>Trang Chủ</b>
+                    <div><a href="#">Sản phẩm</a></div>
+                    <div><a href="#">Giới thiệu</a></div>
+                    <div><a href="#">Liên hệ</a></div>
+                </div>
+                <div>
+                    <b>Thông tin</b>
+                    <div><a href="#">Chính sách bảo mật</a></div>
+                    <div><a href="#">Điều khoản sử dụng</a></div>
+                    <div><a href="#">Hỗ trợ khách hàng</a></div>
+                </div>
+                <div>
+                    <b>Hỗ trợ</b>
+                    <div><a href="#">Câu hỏi thường gặp</a></div>
+                    <div><a href="#">Chính sách đổi trả</a></div>
+                    <div><a href="#">Phương thức thanh toán</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2077 ANITA. All rights reserved.</span>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.querySelector('.sort-dropdown');
+        if (!dropdown) return;
+        const btn = dropdown.querySelector('.sort-btn');
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', function() {
+            dropdown.classList.remove('open');
+        });
+        dropdown.querySelectorAll('.sort-item').forEach(item => {
+            item.addEventListener('click', function() {
+                if (!this.classList.contains('active')) {
+                    dropdown.querySelector('.sort-selected').textContent = this.textContent;
+                    dropdown.querySelectorAll('.sort-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    dropdown.classList.remove('open');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
